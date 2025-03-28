@@ -1,0 +1,61 @@
+---
+interface Props {
+  items?: {
+    title: string;
+    description: string;
+  }[];
+}
+
+const { items = [
+  {
+    title: "Secure Connections",
+    description: "Military-grade encryption for all your VPN connections"
+  },
+  {
+    title: "Global Servers",
+    description: "Access servers in 50+ countries worldwide"
+  },
+  {
+    title: "24/7 Support",
+    description: "Dedicated Telegram support team available anytime"
+  }
+] } = Astro.props;
+---
+
+<section class="features">
+  <div class="features-grid">
+    {items.map((item, index) => (
+      <div key={index} class="feature-item">
+        <h3>{item.title}</h3>
+        <p>{item.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: 4rem 2rem;
+    background: #1a1a1a;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .feature-item {
+    background: #2d3436;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .feature-item h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  .feature-item p {
+    color: #a9d6ff;
+  }
+</style>

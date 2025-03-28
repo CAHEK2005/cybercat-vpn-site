@@ -1,0 +1,60 @@
+---
+    interface Props {
+      title: string;
+    }
+
+    const { title } = Astro.props;
+    ---
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Secure VLESS VPN configurations for anonymous browsing" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>{title}</title>
+      </head>
+      <body>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#support">Support</a></li>
+          </ul>
+        </nav>
+        <slot />
+        <div class="support-button">
+          <a href="https://t.me/your-telegram-bot" target="_blank" rel="noopener noreferrer">
+            Tech Support
+          </a>
+        </div>
+      </body>
+    </html>
+
+    <style>
+      .main-nav {
+        background: #2d3436;
+        padding: 1rem;
+      }
+      .main-nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .main-nav a {
+        color: #fff;
+        text-decoration: none;
+      }
+      .support-button {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: #2ecc71;
+        color: #fff;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+    </style>

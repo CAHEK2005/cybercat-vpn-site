@@ -1,0 +1,99 @@
+---
+// Import components
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import FeaturesSection from '../components/FeaturesSection.astro';
+import ChatBot from '../components/ChatBot.astro';
+
+const features = [
+  {
+    title: "VLESS Configs",
+    description: "Get optimized VLESS configurations for maximum speed (zoom zoom fast like Sonic)"
+  },
+  {
+    title: "No Logs Policy",
+    description: "We don't store any of your activity or connection logs (we're not your ex, we won't stalk you)"
+  },
+  {
+    title: "Instant Delivery",
+    description: "Configurations delivered automatically via Telegram bot (faster than your pizza delivery)"
+  }
+];
+
+const memes = [
+  "Our VPN is so fast, it makes Flash look slow",
+  "More secure than your ex's DMs",
+  "No logs? No problem! We don't even remember your name",
+  "Your ISP watching you use our VPN: 👁️👄👁️",
+  "When the government asks for your data: 🏃‍♂️💨"
+];
+---
+
+<Layout title="CyberCat VPN - Fast & Anonymous">
+  <HeroSection 
+    title="Premium VPN Configurations" 
+    subtitle="Get secure, high-speed VLESS connections with our premium configurations (because privacy shouldn't be a luxury)" 
+    ctaText="Get Started" 
+    ctaLink="#features" 
+  />
+  <FeaturesSection items={features} />
+  
+  <section class="meme-section">
+    <div class="meme-container">
+      <h2>Why Choose CyberCat VPN?</h2>
+      <div class="meme-grid">
+        {memes.map((meme, index) => (
+          <div class="meme-card" key={index}>
+            <p>{meme}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ChatBot />
+</Layout>
+
+<style>
+  .meme-section {
+    padding: 2rem;
+    background: linear-gradient(to right, #0f1a0f, #1a2e1a);
+  }
+
+  .meme-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .meme-container h2 {
+    color: #2ecc71;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .meme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .meme-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(46, 204, 113, 0.3);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .meme-card:hover {
+    transform: translateY(-5px);
+    background: rgba(46, 204, 113, 0.1);
+  }
+
+  .meme-card p {
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+</style>

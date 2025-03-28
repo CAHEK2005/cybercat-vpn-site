@@ -1,0 +1,67 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  ctaText: string;
+  ctaLink: string;
+}
+
+const { title, subtitle, ctaText, ctaLink } = Astro.props;
+---
+<section class="hero">
+  <div class="hero-content">
+    <div class="cyber-cat">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="..." fill="#2D3436"/> <!-- Cyber cat SVG would go here -->
+      </svg>
+    </div>
+    <h1 class="hero-title">{title}</h1>
+    <p class="hero-subtitle">{subtitle}</p>
+    <a href={ctaLink} class="cta-button">
+      {ctaText}
+    </a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 4rem 2rem;
+    background: linear-gradient(to bottom right, #1a1a1a, #2d3436);
+  }
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .cyber-cat {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+  }
+  .hero-title {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+  }
+  .hero-subtitle {
+    color: #a9d6ff;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, #2ecc71, #27ae60);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+  }
+  .cta-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.6);
+  }
+</style>
